@@ -39,7 +39,7 @@ export default function AddNote (props) {
       await createNote({ content, attachment })
       props.history.push('/')
     } catch (e) {
-      alert(e)
+      alert(e.message)
       setIsLoading(false)
     }
   }
