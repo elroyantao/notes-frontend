@@ -3,6 +3,7 @@ import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 import { API } from 'aws-amplify'
 
 import LoaderButton from '../../components/LoaderButton/LoaderButton'
+import { s3Upload } from '../../lib/awsLib'
 import config from '../../config'
 
 import styles from './AddNote.module.css'
@@ -31,7 +32,11 @@ export default function AddNote (props) {
     setIsLoading(true)
 
     try {
-      await createNote({ content })
+      const attachment = file.current
+        ? await s3Upload(file.current)
+        : null
+
+      await createNote({ content, attachment })
       props.history.push('/')
     } catch (e) {
       alert(e)
