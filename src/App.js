@@ -40,7 +40,7 @@ function App(props) {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand className={styles['navbar-brand']}>
-            <Link to='/'>Scratch</Link>
+            <Link to='/'>Notea</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

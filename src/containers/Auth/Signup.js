@@ -74,7 +74,7 @@ export default function Signup (props) {
     return (
       <form onSubmit={handleConfirmationSubmit}>
         <FormGroup controlId='confirmationCode' bsSize='large'>
-          <ControlLabel>Email</ControlLabel>
+          <ControlLabel>Condirmation Code</ControlLabel>
           <FormControl
             autoFocus
             type='tel'
